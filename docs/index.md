@@ -214,8 +214,6 @@ NoSQLデータベースのDataStoreを試してみます。DataStoreにデータ
   
 
 1.  左上の [Google Cloud Platform] の横にある**ナビゲーション メニュー**をクリック
-    
-
 ![](assets/images/image1.png)
 
 2.  Cloud Platform Console の左側のメニューの、**[Datastore] > [エンティティ] **に移動します。（Datastoreが表示されない場合はメニュー下部のMORE PRODUCTSをクリックして開いてください）
