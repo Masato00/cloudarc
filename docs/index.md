@@ -1,22 +1,82 @@
-# クラウドアーキテクト・ファーストステップ - 演習補助手順
+## ラボ環境の使用方法
 
-## ラボ1 Introduction to Amazon EC2 Auto Scaling
+- [Cloud Skills Boost (Qwiklabs) へのログイン手順](https://qualia906.github.io/skillsboost/how-to-login/)
+- [ラボの開始手順 (AWS / GCP)](https://qualia906.github.io/skillsboost/how-to-use-lab/)
 
+<br />    
+
+## ラボ (演習)
+
+
+### 演習 1：[Introduction to Amazon EC2 Auto Scaling (日本語版)](https://amazon.qwiklabs.com/focuses/37760?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=16787010)【AWS】
+
+<br /> 
+
+### 演習 2：[Docker の概要](https://www.qwiklabs.com/focuses/1029?catalog_rank=%7B%22rank%22%3A3%2C%22num_filters%22%3A1%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=4806504)【Google Cloud】
+
+
+-   初回にdocker buildコマンドを実行した際に、「Cloud Shell の承認」というダイアログが表示されることがありますが、そのまま承認してください。
+    
+-   「公開」で Docker イメージを Google Container Registry に push した後の手順では、Cloud Shell ではなく GCP コンソール (GUI) から [ナビゲーション  メニュー] > [Container Registry] をクリックします。
+    
+-   任意のエディタで内容を書き換える手順において、vi や nano の操作が不安な方は、次のコマンドをコピーして実行してください。  
+
+    ```
+    cp -p app.js app.js.org  
+    sed -ie 's/Hello World/Welcome to Cloud/' app.js
+    ```
   
+<br />
+
+### 演習 3：[DataStore: Qwik Start](https://www.qwiklabs.com/focuses/941?catalog_rank=%7B%22rank%22%3A5%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=9212410)   
+  AWSのDynamoDB に相当する Google Cloud の NoSQL データベース サービスです。
+
+<br />
+
+### 演習 4：クラウドデザインパターンの適用
+
+-   [AWS クラウドデザインパターン](http://aws.clouddesignpattern.org/index.php/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8)    
+-   [AWS クラウドデザインパターン](http://web.archive.org/web/20171008040110/http:/aws.clouddesignpattern.org/index.php/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8)（上記が表示されない場合はこちら）
+    
+<br />  
+
+## Reference
+
+- AWS
+  -  [AWS Well-Architected – 安全で効率的なクラウド対応アプリケーション](https://aws.amazon.com/jp/architecture/well-architected/)
+
+ 
+ - Microsoft Azure   
+   -   [Microsoft Azure クラウド設計パターン](https://docs.microsoft.com/ja-jp/azure/architecture/patterns/)
+   -   [Microsoft Azure Well-Architected Framework](https://docs.microsoft.com/ja-jp/azure/architecture/framework/)    
+
+
+- Google Cloud
+  -  [Google Cloud ソリューション デザインパターン](https://events.withgoogle.com/solution-design-pattern/)
+  -  [Google Cloud アーキテクチャ フレームワーク ](https://cloud.google.com/architecture/framework)
+  -  [ハイブリッドクラウドのパターン (ハイブリッドクラウドと Google Cloud)](https://www.slideshare.net/GoogleCloudPlatformJP/cloud-onair-google-cloud-201927-133656441)
+
+<br>
+<br>
+
+
+# 演習補足手順
 
 *インストラクターから指示があった場合はこちらの手順を参照しながら演習を進めてください。*
 
-  
+
+## ラボ1 Introduction to Amazon EC2 Auto Scaling
+
 
 このラボでは以下のことを試します。
 
-・起動テンプレートを作成する
+- 起動テンプレートを作成する
 
-・Auto Scaling グループを作成する
+- Auto Scaling グループを作成する
 
-・Auto Scaling インフラストラクチャをテストする
+- Auto Scaling インフラストラクチャをテストする
 
-・Auto Scaling 起動の結果を表示する
+- Auto Scaling 起動の結果を表示する
 
 ### タスク1:起動テンプレートを作成する
 
@@ -203,12 +263,6 @@
 
 ## ラボ3Datastore: Qwik Start
 
-  
-
-*インストラクターから指示があった場合はこちらの手順を参照しながら演習を進めてください。*
-
-  
-
 NoSQLデータベースのDataStoreを試してみます。DataStoreにデータを格納し、検索してみます。オンプレミスで使用しているリレーショナルデータベースとの違いを意識しながら進めていきましょう。
 
   
@@ -216,15 +270,15 @@ NoSQLデータベースのDataStoreを試してみます。DataStoreにデータ
 1.  左上の [Google Cloud Platform] の横にある**ナビゲーション メニュー**をクリック
 ![](assets/images/image1.png)
 
-2.  Cloud Platform Console の左側のメニューの、**[Datastore] > [エンティティ] **に移動します。（Datastoreが表示されない場合はメニュー下部のMORE PRODUCTSをクリックして開いてください）
+2.  Cloud Platform Console の左側のメニューの、**Datastore > エンティティ**に移動します。（Datastoreが表示されない場合はメニュー下部のMORE PRODUCTSをクリックして開いてください）
     
-3.  [Datastore モード] 列で、**[Datastore モードを選択] **をクリックします。
+3.  [Datastore モード] 列で、**Datastore モードを選択 **をクリックします。
     
-4.  次に、データベースを作成する場所を選択します。プルダウン メニューを使用してt東京リージョンの**「asia-northeast1(Tokyo)」**を選択します。  
+4.  次に、データベースを作成する場所を選択します。プルダウン メニューを使用してt東京リージョンの**asia-northeast1(Tokyo)**を選択します。  
     (ここでデータベースを作成するをクリックする必要がある場合があります)  
     次のステップに進むまで1～2分ほど時間がかかります。
     
-5.  **[エンティティを作成] **をクリックします。エンティティはDatastoreにおける一行のデータのような扱いです。  
+5.  **エンティティを作成**をクリックします。エンティティはDatastoreにおける一行のデータのような扱いです。  
     ![](assets/images/image2.png)
     
 
@@ -232,7 +286,7 @@ NoSQLデータベースのDataStoreを試してみます。DataStoreにデータ
     Datastoreの種類はリレーショナルデータベースのテーブルのようなものです。  
     ![](assets/images/image3.png)  
     **続けてプロパティを入力します**。Datastoreのプロパティはリレーショナールデータベースの列のようなものです。  
-    最初の新しいプロパティに以下のように設定を行い、**[完了]**をクリックします。**続けて、プロパティを追加をクリックし、以下の表のように3つのプロパティを設定します。**  
+    最初の新しいプロパティに以下のように設定を行い、**完了**をクリックします。**続けて、プロパティを追加をクリックし、以下の表のように3つのプロパティを設定します。**  
     ![](assets/images/image4.png)
 
 
@@ -243,11 +297,11 @@ NoSQLデータベースのDataStoreを試してみます。DataStoreにデータ
 |  Album| 文字列 |The Dark Side of the Moon|
 
 
-7.  **[作成]** をクリックします。作成した Music エンティティがコンソールに表示されます。  
+7.  **作成** をクリックします。作成した Music エンティティがコンソールに表示されます。  
     ![](assets/images/image5.png)
     
 8.  同様に以下の二つのエンティティを登録します。  
-    **[エンティティを作成]**をクリックして登録します。  
+    **エンティティを作成**をクリックして登録します。  
     Datastoreはテーブル作成時テーブルの構造である「スキーマ」を設定する必要がなく、後からエンティティを追加する際に柔軟に列を定義することができます。
     
 |  名前| タイプ |値|
@@ -280,13 +334,13 @@ DatastoreではGUI画面から簡単にフィルタをかけてデータを検�
 
   
 
-1.  **[種類別のクエリ]** をクリックします。(多くの場合、すでに種類別クエリ画面になっています)
+1.  **種類別のクエリ** をクリックします。(多くの場合、すでに種類別クエリ画面になっています)
     
-2.  **[種類]** に **[Music]** を選択します。(多くの場合、すでにMusicが選択されています)
+2.  **種類** に **Music** を選択します。(多くの場合、すでにMusicが選択されています)
     
-3.  **[+クエリ句を追加]** をクリックします。
+3.  **+クエリに追加** をクリックします。
     
-4.  プルダウン リストで、**[Artist]、[＝文字列]、[Psy]** を選択し、**[実行]**をクリックします。1件の検索結果が表示されます。
+4.  プルダウン リストで、**「WHERE」「Artist」、「==」「string」、「Psy」** を選択し、**「実行」**をクリックします。1件の検索結果が表示されます。
     
 
   
@@ -296,7 +350,7 @@ DatastoreではGUI画面から簡単にフィルタをかけてデータを検�
 DatastoreではSQLに似たGQLというクエリ言語を使用することができます。慣れ親しんだSQLに似たクエリを実行できるため、便利です。  
   
 
-1.  **[GQL によるクエリ]** タブをクリックします。
+1.  **GQL によるクエリ** タブをクリックします。
     
 2.  クエリボックスに次のように入力します。
     
@@ -305,25 +359,22 @@ DatastoreではSQLに似たGQLというクエリ言語を使用することが�
 
   
 
-3.  **[クエリを実行]** をクリックします。  
+3.  **クエリを実行** をクリックします。  
     クエリの結果として、作成した Music エンティティが表示されます。
     
-4.  次のクエリを実行します。
-    
-
-    SELECT * FROM Music WHERE Album = 'Imagine'
-
-  
-Album名がImagineのデータだけに絞り込むことができます。
-
-  
-  
-  
-
+<br>
 ラボ3は以上です。お疲れ様でした。
 
-  
+<br>
 
 早く終わった場合にGCPの他のサービスをのメニューを見ても構いませんが、ラボで指定された以外の仮想マシンを立てたり等、新たなリソースを作成したりはしないでください。
 
 新たなエンティティを足してみたり、削除してみたり、クエリを実行してみたりするのは構いません。
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script language="JavaScript">
+$(document).ready( function () {
+   $("a[href^='http']").attr('target', '_blank');
+})
+</script>
